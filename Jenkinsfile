@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('update k8s manifest') {
             steps {
-                sh "cd ~/orderops && yq eval -i '.spec.template.spec.containers[0].image= \"venuchowgani/orderapp:dev_${BUILD_ID}\" ' ~/orderops/manifests/orderdeploy.yaml"
+                sh "cd ~/orderops && yq eval -i '.spec.template.spec.containers[0].image= \"batchusivaji/argorepo:dev_${BUILD_ID}\" ' ~/orderops/manifests/orderdeploy.yaml"
                 sh """
                   cd ~/orderops
                   git add ~/orderops/manifests/orderdeploy.yaml
