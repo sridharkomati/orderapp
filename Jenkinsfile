@@ -1,6 +1,6 @@
 pipeline {
-    agent any
-
+    agent { label 'Docker'}
+    triggers { pollSCM ('* * * * *') }
     stages {
         stage('checkout') {
             steps {
